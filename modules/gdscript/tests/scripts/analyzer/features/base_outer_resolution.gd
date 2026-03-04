@@ -1,8 +1,8 @@
-const A: = preload("base_outer_resolution_a.notest.gd")
-const B: = preload("base_outer_resolution_b.notest.gd")
-const C: = preload("base_outer_resolution_c.notest.gd")
+final A: = preload("base_outer_resolution_a.notest.gd")
+final B: = preload("base_outer_resolution_b.notest.gd")
+final C: = preload("base_outer_resolution_c.notest.gd")
 
-const Extend: = preload("base_outer_resolution_extend.notest.gd")
+final Extend: = preload("base_outer_resolution_extend.notest.gd")
 
 func test() -> void:
 	Extend.test_a(A.new())

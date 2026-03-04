@@ -1,4 +1,4 @@
-const array: Array = [{}]
+final array: Array = [{}]
 
 func test():
 	var dictionary := array[0]

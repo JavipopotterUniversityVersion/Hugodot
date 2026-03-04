@@ -1,9 +1,9 @@
 # Inner-outer class lookup
 class A:
-	const Q: = "right one"
+	final Q: = "right one"
 
 class X:
-	const Q: = "wrong one"
+	final Q: = "wrong one"
 
 class Y extends X:
 	class B extends A:
@@ -11,7 +11,7 @@ class Y extends X:
 			print(Q)
 
 # External class lookup
-const External: = preload("lookup_class_external.notest.gd")
+final External: = preload("lookup_class_external.notest.gd")
 
 class Internal extends External.A:
 	static func check() -> void:
@@ -27,7 +27,7 @@ class C:
 	var Q := 'right one'
 
 class D:
-	const Q := 'wrong one'
+	final Q := 'wrong one'
 
 class E extends D:
 	class F extends C:

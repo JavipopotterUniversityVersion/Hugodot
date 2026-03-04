@@ -1,6 +1,6 @@
 # GH-75870
 
-const A = 1
+final A = 1
 
 class B extends A:
 	pass

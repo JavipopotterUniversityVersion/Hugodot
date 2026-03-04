@@ -1,3 +1,3 @@
 func test():
-	const TEST = 25
+	final TEST = 25
 	var TEST = 50

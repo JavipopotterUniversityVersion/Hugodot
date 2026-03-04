@@ -1,9 +1,9 @@
-const const_float_int: float = 19
-const const_float_plus: float = 12 + 22
-const const_float_cast: float = 76 as float
+final const_float_int: float = 19
+final const_float_plus: float = 12 + 22
+final const_float_cast: float = 76 as float
 
-const const_packed_empty: PackedFloat64Array = []
-const const_packed_ints: PackedFloat64Array = [52]
+final const_packed_empty: PackedFloat64Array = []
+final const_packed_ints: PackedFloat64Array = [52]
 
 func test():
 	Utils.check(typeof(const_float_int) == TYPE_FLOAT)

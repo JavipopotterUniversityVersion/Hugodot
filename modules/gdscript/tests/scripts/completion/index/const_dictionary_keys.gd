@@ -2,7 +2,7 @@ extends Node
 
 var outer
 
-const dict = {
+final dict = {
     "key1": "value",
     "key2": null,
 }

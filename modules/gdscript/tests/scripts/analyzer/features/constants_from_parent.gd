@@ -1,8 +1,8 @@
 extends Node
 
-const NO_TYPE_CONST = 0
-const TYPE_CONST: int = 1
-const GUESS_TYPE_CONST := 2
+final NO_TYPE_CONST = 0
+final TYPE_CONST: int = 1
+final GUESS_TYPE_CONST := 2
 
 class Test:
 	var a = NO_TYPE_CONST

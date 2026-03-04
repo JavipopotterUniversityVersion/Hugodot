@@ -59,7 +59,7 @@ func set_prop8(value):
 	print(value)
 	#     ^^^^^ -> set_prop8:value
 
-const const_var := 42
+final const_var := 42
 #     ^^^^^^^^^ const_var -> const_var
 static var static_var := 42
 #          ^^^^^^^^^^ static_var -> static_var

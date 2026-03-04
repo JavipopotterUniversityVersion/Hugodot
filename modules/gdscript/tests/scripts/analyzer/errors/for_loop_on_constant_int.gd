@@ -1,4 +1,4 @@
-const constant_int = 1
+final constant_int = 1
 
 func test():
 	for x in constant_int:

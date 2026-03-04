@@ -1,10 +1,10 @@
 class Outer:
 	enum OuterEnum { OuterValue = 3 }
-	const OuterConst := OuterEnum
+	final OuterConst := OuterEnum
 
 	class Inner:
 		enum InnerEnum { InnerValue = 7 }
-		const InnerConst := InnerEnum
+		final InnerConst := InnerEnum
 
 		static func test() -> void:
 			print(OuterEnum.size());

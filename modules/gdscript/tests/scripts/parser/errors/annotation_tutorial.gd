@@ -2,4 +2,4 @@
 # ## @tutorial(Title): https://example.com
 
 @tutorial("https://example.com")
-const SOME_CONSTANT = "value"
+final SOME_CONSTANT = "value"

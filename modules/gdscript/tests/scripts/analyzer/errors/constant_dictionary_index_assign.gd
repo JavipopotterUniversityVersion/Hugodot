@@ -1,4 +1,4 @@
-const dictionary := {}
+final dictionary := {}
 
 func test():
 	var key: int = 0

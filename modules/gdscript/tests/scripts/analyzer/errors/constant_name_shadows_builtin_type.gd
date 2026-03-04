@@ -1,4 +1,4 @@
-const Vector2 = 0
+final Vector2 = 0
 
 func test():
 	pass

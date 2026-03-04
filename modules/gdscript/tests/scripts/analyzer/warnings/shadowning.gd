@@ -17,7 +17,7 @@ func test():
 	var reference := 'reference'
 	var ShadowedClass := 'ShadowedClass'
 	var base_variable_member
-	const base_function_member = 1
+	final base_function_member = 1
 	var base_const_member
 
 	print('warn')

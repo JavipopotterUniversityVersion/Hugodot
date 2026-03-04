@@ -1,8 +1,8 @@
 var array_var: Array = ["one", "two", "three", "four"]
-const array_const: Array = ["one", "two", "three", "four"]
+final array_const: Array = ["one", "two", "three", "four"]
 
 var array_nested_var: Array = [["one"], ["two"], ["three"], ["four"]]
-const array_nested_const: Array = [["one"], ["two"], ["three"], ["four"]]
+final array_nested_const: Array = [["one"], ["two"], ["three"], ["four"]]
 
 
 func test():

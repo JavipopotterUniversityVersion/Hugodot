@@ -1,2 +1,2 @@
 func test():
-	const arr: Array[int] = ["Hello", "World"]
+	final arr: Array[int] = ["Hello", "World"]

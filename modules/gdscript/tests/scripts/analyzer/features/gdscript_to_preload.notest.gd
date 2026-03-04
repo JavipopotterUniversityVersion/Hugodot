@@ -1,4 +1,4 @@
-const A := 42
+final A := 42
 
 func something():
 	return "OK"

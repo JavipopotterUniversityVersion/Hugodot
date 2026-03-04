@@ -1,9 +1,9 @@
 class MyClass:
-	const TEST = 10
+	final TEST = 10
 
 enum MyEnum {A, B, C}
 
-const Other = preload("./metatypes.notest.gd")
+final Other = preload("./metatypes.notest.gd")
 
 var test_native := JSON
 var test_script := Other
@@ -37,10 +37,10 @@ func test():
 	print(test_enum.keys())
 
 	print("---")
-	# Some users add unnecessary type hints to `const`-`preload`, which removes metatypes.
+	# Some users add unnecessary type hints to `final`-`preload`, which removes metatypes.
 	# For **constant** `GDScript` we still check the class members, despite the wider type.
-	const ScriptNoMeta: GDScript = Other
-	const ClassNoMeta: GDScript = MyClass
+	final ScriptNoMeta: GDScript = Other
+	final ClassNoMeta: GDScript = MyClass
 	var a := ScriptNoMeta.TEST
 	var b := ClassNoMeta.TEST
 	print(a)

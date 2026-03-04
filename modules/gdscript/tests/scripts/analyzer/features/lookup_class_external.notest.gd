@@ -1,15 +1,15 @@
 class A:
-	const TARGET: = "wrong"
+	final TARGET: = "wrong"
 
 	class B:
-		const TARGET: = "wrong"
-		const WAITING: = "godot"
+		final TARGET: = "wrong"
+		final WAITING: = "godot"
 
 		class D extends C:
 			pass
 
 class C:
-	const TARGET: = "right"
+	final TARGET: = "right"
 
 class E extends A.B.D:
 	pass

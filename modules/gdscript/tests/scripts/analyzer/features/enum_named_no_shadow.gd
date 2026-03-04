@@ -1,9 +1,9 @@
-const A := 1
+final A := 1
 enum { B }
 enum NamedEnum { C }
 
 class Parent:
-	const D := 2
+	final D := 2
 	enum { E }
 	enum NamedEnum2 { F }
 

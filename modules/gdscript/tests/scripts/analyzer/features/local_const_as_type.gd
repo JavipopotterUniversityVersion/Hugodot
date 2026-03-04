@@ -1,15 +1,15 @@
 class InnerClass:
 	enum InnerEnum {A = 2}
-	const INNER_CONST = "INNER_CONST"
+	final INNER_CONST = "INNER_CONST"
 
 enum Enum {A = 1}
 
-const Other = preload("./local_const_as_type.notest.gd")
+final Other = preload("./local_const_as_type.notest.gd")
 
 func test():
-	const IC = InnerClass
-	const IE = IC.InnerEnum
-	const E = Enum
+	final IC = InnerClass
+	final IE = IC.InnerEnum
+	final E = Enum
 	# Doesn't work in CI, but works in the editor. Looks like an unrelated bug. TODO: Investigate it.
 	# Error: Invalid call. Nonexistent function 'new' in base 'GDScript'.
 	var a1: IC = null # IC.new()
@@ -21,11 +21,11 @@ func test():
 	print(a3)
 	print(a4)
 
-	const O = Other
-	const OV: Variant = Other # Removes metatype.
-	const OIC = O.InnerClass
-	const OIE = OIC.InnerEnum
-	const OE = O.Enum
+	final O = Other
+	final OV: Variant = Other # Removes metatype.
+	final OIC = O.InnerClass
+	final OIE = OIC.InnerEnum
+	final OE = O.Enum
 	var b: O = O.new()
 	@warning_ignore("unsafe_method_access")
 	var bv: OV = OV.new()

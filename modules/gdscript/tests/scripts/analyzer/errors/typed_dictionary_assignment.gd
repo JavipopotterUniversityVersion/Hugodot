@@ -1,2 +1,2 @@
 func test():
-	const dict: Dictionary[int, int] = { "Hello": "World" }
+	final dict: Dictionary[int, int] = { "Hello": "World" }

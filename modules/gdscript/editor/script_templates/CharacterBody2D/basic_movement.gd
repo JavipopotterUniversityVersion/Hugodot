@@ -3,8 +3,8 @@
 extends _BASE_
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+final SPEED = 300.0
+final JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
