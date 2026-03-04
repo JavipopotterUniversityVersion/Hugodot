@@ -1462,7 +1462,7 @@ void GDScriptParser::parse_property_getter(VariableNode *p_variable) {
 GDScriptParser::ConstantNode *GDScriptParser::parse_constant(bool p_is_static) {
 	ConstantNode *constant = alloc_node<ConstantNode>();
 
-	if (!consume(GDScriptTokenizer::Token::IDENTIFIER, R"(Expected constant name after "final".)")) {
+	if (!consume(GDScriptTokenizer::Token::IDENTIFIER, R"(Expected constant name after "const".)")) {
 		complete_extents(constant);
 		return nullptr;
 	}
@@ -2375,8 +2375,8 @@ GDScriptParser::IfNode *GDScriptParser::parse_if(const String &p_token) {
 
 		current_suite = previous_suite;
 	} else if (match(GDScriptTokenizer::Token::ELSE)) {
-		consume(GDScriptTokenizer::Token::COLON, R"(Expected ":" after "no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal".)");
-		n_if->false_block = parse_suite(R"("no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal" block)");
+		consume(GDScriptTokenizer::Token::COLON, R"(Expected ":" after "else".)");
+		n_if->false_block = parse_suite(R"("else" block)");
 	}
 	complete_extents(n_if);
 
@@ -3091,15 +3091,15 @@ GDScriptParser::ExpressionNode *GDScriptParser::parse_ternary_operator(Expressio
 	operation->condition = parse_precedence(PREC_TERNARY, false);
 
 	if (operation->condition == nullptr) {
-		push_error(R"(Expected expression as ternary condition after "si_es".)");
+		push_error(R"(Expected expression as ternary condition after "if".)");
 	}
 
-	consume(GDScriptTokenizer::Token::ELSE, R"(Expected "no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal" after ternary operator condition.)");
+	consume(GDScriptTokenizer::Token::ELSE, R"(Expected "else" after ternary operator condition.)");
 
 	operation->false_expr = parse_precedence(PREC_TERNARY, false);
 
 	if (operation->false_expr == nullptr) {
-		push_error(R"(Expected expression after "no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal".)");
+		push_error(R"(Expected expression after "else".)");
 	}
 
 	complete_extents(operation);

@@ -37,7 +37,7 @@
 				Converts a URI to a file path.
 			</description>
 		</method>
-		<method name="get_file_uri" qualifiers="final">
+		<method name="get_file_uri" qualifiers="const">
 			<return type="String" />
 			<param index="0" name="path" type="String" />
 			<description>

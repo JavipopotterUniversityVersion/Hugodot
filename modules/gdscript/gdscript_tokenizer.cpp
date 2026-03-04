@@ -89,9 +89,9 @@ static const char *token_names[] = {
 	"|=", // PIPE_EQUAL,
 	"^=", // CARET_EQUAL,
 	// Control flow
-	"si_es", // IF,
+	"if", // IF,
 	"elif", // ELIF,
-	"no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal", // ELSE,
+	"else", // ELSE,
 	"for", // FOR,
 	"while", // WHILE,
 	"break", // BREAK,
@@ -107,7 +107,7 @@ static const char *token_names[] = {
 	"breakpoint", // BREAKPOINT,
 	"class", // CLASS,
 	"class_name", // CLASS_NAME,
-	"final", // TK_CONST,
+	"const", // TK_CONST,
 	"enum", // ENUM,
 	"extends", // EXTENDS,
 	"func", // FUNC,
@@ -495,6 +495,7 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD_GROUP('c') \
 	KEYWORD("class", Token::CLASS) \
 	KEYWORD("class_name", Token::CLASS_NAME) \
+	KEYWORD("const", Token::TK_CONST) \
 	KEYWORD("continue", Token::CONTINUE) \
 	KEYWORD_GROUP('e') \
 	KEYWORD("elif", Token::ELIF) \
@@ -502,7 +503,6 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD("enum", Token::ENUM) \
 	KEYWORD("extends", Token::EXTENDS) \
 	KEYWORD_GROUP('f') \
-	KEYWORD("final", Token::TK_CONST) \
 	KEYWORD("for", Token::FOR) \
 	KEYWORD("func", Token::FUNC) \
 	KEYWORD_GROUP('i') \
@@ -512,7 +512,6 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD_GROUP('m') \
 	KEYWORD("match", Token::MATCH) \
 	KEYWORD_GROUP('n') \
-	KEYWORD("no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal", Token::ELSE) \
 	KEYWORD("namespace", Token::NAMESPACE) \
 	KEYWORD("not", Token::NOT) \
 	KEYWORD_GROUP('o') \
@@ -523,7 +522,6 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD_GROUP('r') \
 	KEYWORD("return", Token::RETURN) \
 	KEYWORD_GROUP('s') \
-	KEYWORD("si_es", Token::IF) \
 	KEYWORD("self", Token::SELF) \
 	KEYWORD("signal", Token::SIGNAL) \
 	KEYWORD("static", Token::STATIC) \
@@ -548,7 +546,7 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD("TAU", Token::CONST_TAU)
 
 #define MIN_KEYWORD_LENGTH 2
-#define MAX_KEYWORD_LENGTH 1000
+#define MAX_KEYWORD_LENGTH 10
 
 #ifdef DEBUG_ENABLED
 void GDScriptTokenizerText::make_keyword_list() {

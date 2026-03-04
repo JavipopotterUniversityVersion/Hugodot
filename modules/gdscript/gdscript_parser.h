@@ -1579,7 +1579,7 @@ private:
 	BreakNode *parse_break();
 	ContinueNode *parse_continue();
 	ForNode *parse_for();
-	IfNode *parse_if(const String &p_token = "si_es");
+	IfNode *parse_if(const String &p_token = "if");
 	MatchNode *parse_match();
 	MatchBranchNode *parse_match_branch();
 	PatternNode *parse_match_pattern(PatternNode *p_root_pattern = nullptr);
