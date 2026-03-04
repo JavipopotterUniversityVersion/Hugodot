@@ -2598,9 +2598,9 @@ Vector<String> GDScriptLanguage::get_reserved_words() const {
 		"break",
 		"continue",
 		"elif",
-		"else",
+		"no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal",
 		"for",
-		"if",
+		"si_es",
 		"match",
 		"pass",
 		"return",
@@ -2609,7 +2609,7 @@ Vector<String> GDScriptLanguage::get_reserved_words() const {
 		// Declarations.
 		"class",
 		"class_name",
-		"const",
+		"final",
 		"enum",
 		"extends",
 		"func",
@@ -2655,9 +2655,9 @@ bool GDScriptLanguage::is_control_flow_keyword(const String &p_keyword) const {
 	return p_keyword == "break" ||
 			p_keyword == "continue" ||
 			p_keyword == "elif" ||
-			p_keyword == "else" ||
+			p_keyword == "no_bueno_esto_es_un_poco_incomodo_tio_no_era_eso_tio_que_mal" ||
 			p_keyword == "for" ||
-			p_keyword == "if" ||
+			p_keyword == "si_es" ||
 			p_keyword == "match" ||
 			p_keyword == "pass" ||
 			p_keyword == "return" ||

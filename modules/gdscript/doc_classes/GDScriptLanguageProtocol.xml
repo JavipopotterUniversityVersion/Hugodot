@@ -34,13 +34,13 @@
 			<description>
 			</description>
 		</method>
-		<method name="is_initialized" qualifiers="const">
+		<method name="is_initialized" qualifiers="final">
 			<return type="bool" />
 			<description>
 				Returns [code]true[/code] if the language server was initialized by a language server client, [code]false[/code] otherwise.
 			</description>
 		</method>
-		<method name="is_smart_resolve_enabled" qualifiers="const">
+		<method name="is_smart_resolve_enabled" qualifiers="final">
 			<return type="bool" />
 			<description>
 				Returns [code]true[/code] if the language server is providing the smart resolve feature, [code]false[/code] otherwise. The feature can be configured through the editor settings.
