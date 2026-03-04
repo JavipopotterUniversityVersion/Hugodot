@@ -6636,9 +6636,11 @@ bool EditorNode::_is_closing_editor() const {
 void EditorNode::_restart_editor(bool p_goto_project_manager) {
 	exiting = true;
 
+	#ifndef HUGODOT
 	if (project_run_bar->is_playing()) {
 		project_run_bar->stop_playing();
 	}
+	#endif
 
 	String to_reopen;
 	if (!p_goto_project_manager && get_tree()->get_edited_scene_root()) {
@@ -8973,11 +8975,13 @@ EditorNode::EditorNode() {
 	right_spacer->set_h_size_flags(Control::SIZE_EXPAND_FILL);
 	title_bar->add_child(right_spacer);
 
+	#ifndef HUGODOT
 	project_run_bar = memnew(EditorRunBar);
 	project_run_bar->set_mouse_filter(Control::MOUSE_FILTER_STOP);
 	title_bar->add_child(project_run_bar);
 	project_run_bar->connect("play_pressed", callable_mp(this, &EditorNode::_project_run_started));
 	project_run_bar->connect("stop_pressed", callable_mp(this, &EditorNode::_project_run_stopped));
+	#endif
 
 	right_menu_hb = memnew(HBoxContainer);
 	right_menu_hb->set_mouse_filter(Control::MOUSE_FILTER_STOP);
