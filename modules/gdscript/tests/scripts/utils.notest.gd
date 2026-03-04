@@ -248,7 +248,7 @@ static func get_property_usage_string(usage: int) -> String:
 	if usage == PROPERTY_USAGE_NONE:
 		return "PROPERTY_USAGE_NONE"
 
-	const FLAGS: Array[Array] = [
+	final FLAGS: Array[Array] = [
 		[PROPERTY_USAGE_STORAGE, "PROPERTY_USAGE_STORAGE"],
 		[PROPERTY_USAGE_EDITOR, "PROPERTY_USAGE_EDITOR"],
 		[PROPERTY_USAGE_INTERNAL, "PROPERTY_USAGE_INTERNAL"],

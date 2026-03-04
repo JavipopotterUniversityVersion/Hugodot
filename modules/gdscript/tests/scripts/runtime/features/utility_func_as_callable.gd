@@ -6,5 +6,5 @@ func test():
 	print(mini.call(1, 2))
 	print(len.bind("abc").call())
 
-	const ABSF = absf
+	final ABSF = absf
 	print(ABSF.call(-1.2))

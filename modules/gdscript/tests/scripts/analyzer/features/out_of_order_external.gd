@@ -1,4 +1,4 @@
-const B = preload("out_of_order_external_a.notest.gd")
+final B = preload("out_of_order_external_a.notest.gd")
 
 func test():
 	print("v1: ", v1)
@@ -24,14 +24,14 @@ class Inner extends B.Inner:
 
 var v2 := B.new().f()
 
-const c1 := E1.V1
+final c1 := E1.V1
 
 enum E1 {
 	V1 = B.E2.V + 2,
 	V2 = V1 - 1
 }
 
-const c2 := EV2
+final c2 := EV2
 
 enum {
 	EV1 = 42,

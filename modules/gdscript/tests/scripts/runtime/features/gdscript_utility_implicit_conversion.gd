@@ -1,5 +1,5 @@
 func test():
-	const COLOR = Color8(255, 0.0, false)
+	final COLOR = Color8(255, 0.0, false)
 	var false_value := false
 	@warning_ignore("narrowing_conversion")
 	var color = Color8(255, 0.0, false_value)

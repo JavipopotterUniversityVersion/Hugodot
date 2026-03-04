@@ -1,5 +1,5 @@
-const constant_float = 1.0
-const constant_int = 1
+final constant_float = 1.0
+final constant_int = 1
 enum { enum_value = 1 }
 
 class Iterator:

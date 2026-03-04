@@ -21,7 +21,7 @@ func test():
 	dict.signal = 1
 	dict.func = 1
 	dict.static = 1
-	dict.const = 1
+	dict.final = 1
 	dict.enum = 1
 	dict.var = 1
 	dict.breakpoint = 1

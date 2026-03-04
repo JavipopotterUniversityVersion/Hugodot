@@ -1,5 +1,5 @@
 class Outer:
-	const OUTER_CONST := 0
+	final OUTER_CONST := 0
 	class Inner:
 		pass
 

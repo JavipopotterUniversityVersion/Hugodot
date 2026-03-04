@@ -5,7 +5,7 @@ class A:
 		enum { X = 2 }
 
 class C:
-	const X = 3
+	final X = 3
 
 	class D:
 		enum { X = 4 }

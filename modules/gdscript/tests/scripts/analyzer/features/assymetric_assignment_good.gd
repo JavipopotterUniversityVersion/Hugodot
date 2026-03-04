@@ -1,4 +1,4 @@
-const const_color: Color = 'red'
+final const_color: Color = 'red'
 
 func func_color(arg_color: Color = 'blue') -> bool:
 	return arg_color == Color.BLUE

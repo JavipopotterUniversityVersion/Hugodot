@@ -1,4 +1,4 @@
-const A = preload("res://completion/class_a.notest.gd")
+final A = preload("res://completion/class_a.notest.gd")
 
 enum LocalInnerEnum {
     TEST_LOCAL_VAL,

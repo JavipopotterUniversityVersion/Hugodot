@@ -1,6 +1,6 @@
 extends Node
 
-const A := preload("res://completion/class_a.notest.gd")
+final A := preload("res://completion/class_a.notest.gd")
 
 var test = A.new()
 

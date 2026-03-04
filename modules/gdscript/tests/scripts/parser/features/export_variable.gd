@@ -2,8 +2,8 @@
 class_name ExportVariableTest
 extends Node
 
-const PreloadedGlobalClass = preload("./export_variable_global.notest.gd")
-const PreloadedUnnamedClass = preload("./export_variable_unnamed.notest.gd")
+final PreloadedGlobalClass = preload("./export_variable_global.notest.gd")
+final PreloadedUnnamedClass = preload("./export_variable_unnamed.notest.gd")
 
 enum CustomEnum {A, B, C}
 

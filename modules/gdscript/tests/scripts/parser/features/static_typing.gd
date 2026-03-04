@@ -8,8 +8,8 @@ func test():
 	var _inferred2 : = 1
 
 	# Type inference is automatic for constants.
-	const _INTEGER = 1
-	const _INTEGER_REDUNDANT_TYPED : int = 1
-	const _INTEGER_REDUNDANT_TYPED2 : int = 1
-	const _INTEGER_REDUNDANT_INFERRED := 1
-	const _INTEGER_REDUNDANT_INFERRED2 : = 1
+	final _INTEGER = 1
+	final _INTEGER_REDUNDANT_TYPED : int = 1
+	final _INTEGER_REDUNDANT_TYPED2 : int = 1
+	final _INTEGER_REDUNDANT_INFERRED := 1
+	final _INTEGER_REDUNDANT_INFERRED2 : = 1

@@ -29,7 +29,7 @@ var v2 := f()
 func f() -> bool:
 	return true
 
-const c1 := E1.V1
+final c1 := E1.V1
 
 enum E1 {
 	V1 = E2.V + 2,
@@ -38,7 +38,7 @@ enum E1 {
 
 enum E2 {V = 2}
 
-const c2 := EV2
+final c2 := EV2
 
 enum {
 	EV1 = 42,

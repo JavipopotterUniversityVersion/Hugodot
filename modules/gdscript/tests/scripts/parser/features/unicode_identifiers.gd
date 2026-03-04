@@ -1,4 +1,4 @@
-const π = PI
+final π = PI
 @warning_ignore("confusable_identifier")
 var ㄥ = π
 
@@ -28,7 +28,7 @@ func test():
 	var δοκιμή = "test"
 	prints("δοκιμή", δοκιμή)
 
-	const d = 1.1
+	final d = 1.1
 	_process(d)
 	@warning_ignore("unsafe_call_argument")
 	print(is_equal_approx(ㄥ, PI + (d * PI)))

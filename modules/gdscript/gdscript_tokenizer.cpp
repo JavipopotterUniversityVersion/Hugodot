@@ -107,7 +107,7 @@ static const char *token_names[] = {
 	"breakpoint", // BREAKPOINT,
 	"class", // CLASS,
 	"class_name", // CLASS_NAME,
-	"const", // TK_CONST,
+	"final", // TK_CONST,
 	"enum", // ENUM,
 	"extends", // EXTENDS,
 	"func", // FUNC,
@@ -495,7 +495,6 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD_GROUP('c') \
 	KEYWORD("class", Token::CLASS) \
 	KEYWORD("class_name", Token::CLASS_NAME) \
-	KEYWORD("const", Token::TK_CONST) \
 	KEYWORD("continue", Token::CONTINUE) \
 	KEYWORD_GROUP('e') \
 	KEYWORD("elif", Token::ELIF) \
@@ -503,6 +502,7 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD("enum", Token::ENUM) \
 	KEYWORD("extends", Token::EXTENDS) \
 	KEYWORD_GROUP('f') \
+	KEYWORD("final", Token::TK_CONST) \
 	KEYWORD("for", Token::FOR) \
 	KEYWORD("func", Token::FUNC) \
 	KEYWORD_GROUP('i') \

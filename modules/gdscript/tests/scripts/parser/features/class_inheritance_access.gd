@@ -1,6 +1,6 @@
 # Test access visibility of parent elements in nested class architectures.
 class Parent:
-	const parent_const := 1
+	final parent_const := 1
 
 	var parent_variable := 2
 
@@ -15,7 +15,7 @@ class Parent:
 		return 4
 
 	class Nested:
-		const nested_const := 5
+		final nested_const := 5
 
 
 class Child extends Parent:

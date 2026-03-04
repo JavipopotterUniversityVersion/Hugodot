@@ -17,7 +17,7 @@ func not_coroutine_void() -> void:
 	pass
 
 func test():
-	const CONST_NULL = null
+	final CONST_NULL = null
 	var var_null = null
 	var var_int: int = 1
 	var var_variant: Variant = 1

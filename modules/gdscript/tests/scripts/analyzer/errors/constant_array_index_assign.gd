@@ -1,4 +1,4 @@
-const array: Array = [0]
+final array: Array = [0]
 
 func test():
 	var key: int = 0

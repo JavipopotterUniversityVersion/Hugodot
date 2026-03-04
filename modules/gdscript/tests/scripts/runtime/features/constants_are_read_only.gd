@@ -1,5 +1,5 @@
-const array: Array = [0]
-const dictionary := {1: 2}
+final array: Array = [0]
+final dictionary := {1: 2}
 
 func test():
 	Utils.check(array.is_read_only() == true)

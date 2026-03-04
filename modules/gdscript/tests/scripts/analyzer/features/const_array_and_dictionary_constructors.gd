@@ -1,16 +1,16 @@
-const A1 = Array()
-const A2 = Array(Array())
-const A3 = Array([])
-const A4 = [Array()]
-const A5 = [[]]
-const A6 = Array([1], TYPE_INT, &"", null)
+final A1 = Array()
+final A2 = Array(Array())
+final A3 = Array([])
+final A4 = [Array()]
+final A5 = [[]]
+final A6 = Array([1], TYPE_INT, &"", null)
 
-const D1 = Dictionary()
-const D2 = Dictionary(Dictionary())
-const D3 = Dictionary({})
-const D4 = { Dictionary(): Dictionary() }
-const D5 = { {}: {} }
-const D6 = Dictionary({ 1: 1 }, TYPE_INT, &"", null, TYPE_INT, &"", null)
+final D1 = Dictionary()
+final D2 = Dictionary(Dictionary())
+final D3 = Dictionary({})
+final D4 = { Dictionary(): Dictionary() }
+final D5 = { {}: {} }
+final D6 = Dictionary({ 1: 1 }, TYPE_INT, &"", null, TYPE_INT, &"", null)
 
 var a1 = Array()
 var a2 = Array(Array())

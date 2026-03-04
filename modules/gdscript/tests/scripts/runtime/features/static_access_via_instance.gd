@@ -8,7 +8,7 @@ class A:
 
 	enum NamedEnum { VALUE = 111 }
 	enum { UNNAMED_ENUM_VALUE = 222 }
-	const CONSTANT = 333
+	final CONSTANT = 333
 	static var static_var := 1
 
 	static func static_func() -> int:

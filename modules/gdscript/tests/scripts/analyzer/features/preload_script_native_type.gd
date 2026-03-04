@@ -1,4 +1,4 @@
-const Preloaded := preload( 'preload_script_native_type.notest.gd' )
+final Preloaded := preload( 'preload_script_native_type.notest.gd' )
 
 func test() -> void:
 	var inferred := Preloaded.new()

@@ -1,4 +1,4 @@
-const A = preload("res://completion/class_a.notest.gd")
+final A = preload("res://completion/class_a.notest.gd")
 
 class LocalInnerClass:
     class InnerInnerClass:

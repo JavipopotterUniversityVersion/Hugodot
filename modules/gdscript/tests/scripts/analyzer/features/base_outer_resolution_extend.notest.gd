@@ -1,6 +1,6 @@
 extends "base_outer_resolution_base.notest.gd"
 
-const B: = preload("base_outer_resolution_b.notest.gd")
+final B: = preload("base_outer_resolution_b.notest.gd")
 
 static func test_a(a: A) -> void:
 	print(a is A)

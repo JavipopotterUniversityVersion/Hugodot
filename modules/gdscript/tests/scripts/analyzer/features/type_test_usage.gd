@@ -12,7 +12,7 @@ func test():
 	Utils.check((builtin is float) == false)
 	Utils.check(is_instance_of(builtin, TYPE_FLOAT) == false)
 
-	const const_builtin: Variant = 3
+	final const_builtin: Variant = 3
 	Utils.check((const_builtin is Variant) == true)
 	Utils.check((const_builtin is int) == true)
 	Utils.check(is_instance_of(const_builtin, TYPE_INT) == true)
@@ -28,7 +28,7 @@ func test():
 	Utils.check((untyped_array is int) == false)
 	Utils.check(is_instance_of(untyped_array, TYPE_INT) == false)
 
-	const const_untyped_array: Variant = []
+	final const_untyped_array: Variant = []
 	Utils.check((const_untyped_array is Variant) == true)
 	Utils.check((const_untyped_array is Array) == true)
 	Utils.check(is_instance_of(const_untyped_array, TYPE_ARRAY) == true)
@@ -46,7 +46,7 @@ func test():
 	Utils.check((int_array is int) == false)
 	Utils.check(is_instance_of(int_array, TYPE_INT) == false)
 
-	const const_int_array: Variant = [] as Array[int]
+	final const_int_array: Variant = [] as Array[int]
 	Utils.check((const_int_array is Variant) == true)
 	Utils.check((const_int_array is Array) == true)
 	Utils.check(is_instance_of(const_int_array, TYPE_ARRAY) == true)
@@ -65,7 +65,7 @@ func test():
 	Utils.check((b_array is int) == false)
 	Utils.check(is_instance_of(b_array, TYPE_INT) == false)
 
-	const const_b_array: Variant = [] as Array[B]
+	final const_b_array: Variant = [] as Array[B]
 	Utils.check((const_b_array is Variant) == true)
 	Utils.check((const_b_array is Array) == true)
 	Utils.check(is_instance_of(const_b_array, TYPE_ARRAY) == true)
@@ -130,7 +130,7 @@ func test():
 	Utils.check((var_null is A) == false)
 	Utils.check(is_instance_of(var_null, A) == false)
 
-	const const_null: Variant = null
+	final const_null: Variant = null
 	Utils.check((const_null is Variant) == true)
 	Utils.check((const_null is int) == false)
 	Utils.check(is_instance_of(const_null, TYPE_INT) == false)

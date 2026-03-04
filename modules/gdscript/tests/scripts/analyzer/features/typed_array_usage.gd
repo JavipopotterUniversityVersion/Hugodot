@@ -58,8 +58,8 @@ func test():
 	Utils.check(str(typed_basic) == '[705.0, 430.0, 263.0, 518.0]')
 
 
-	const constant_float := 950.0
-	const constant_int := 170
+	final constant_float := 950.0
+	final constant_int := 170
 	var typed_float := 954.0
 	var filled_floats: Array[float] = [constant_float, constant_int, typed_float, empty_floats[1] + empty_floats[2]]
 	Utils.check(str(filled_floats) == '[950.0, 170.0, 954.0, 693.0]')
@@ -88,11 +88,11 @@ func test():
 	Utils.check(converted_floats.get_typed_builtin() == TYPE_FLOAT)
 
 
-	const constant_basic = [228]
+	final constant_basic = [228]
 	Utils.check(str(constant_basic) == '[228]')
 	Utils.check(constant_basic.get_typed_builtin() == TYPE_NIL)
 
-	const constant_floats: Array[float] = [constant_float - constant_basic[0] - constant_int]
+	final constant_floats: Array[float] = [constant_float - constant_basic[0] - constant_int]
 	Utils.check(str(constant_floats) == '[552.0]')
 	Utils.check(constant_floats.get_typed_builtin() == TYPE_FLOAT)
 
@@ -198,7 +198,7 @@ func test():
 	Utils.check(str(typed_enums) == '[391]')
 	Utils.check(typed_enums.get_typed_builtin() == TYPE_INT)
 
-	const const_enums: Array[E] = []
+	final const_enums: Array[E] = []
 	Utils.check(const_enums.get_typed_builtin() == TYPE_INT)
 	Utils.check(const_enums.get_typed_class_name() == &'')
 

@@ -1,4 +1,4 @@
-const base := [0]
+final base := [0]
 
 func test():
 	var sub := base[0]

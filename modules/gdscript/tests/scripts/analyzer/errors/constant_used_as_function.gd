@@ -1,4 +1,4 @@
-const CONSTANT = 25
+final CONSTANT = 25
 
 
 func test():

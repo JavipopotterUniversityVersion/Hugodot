@@ -1,5 +1,5 @@
 # See also `parser-warnings/shadowed-constant.gd`.
-const TEST = 25
+final TEST = 25
 
 
 func test():

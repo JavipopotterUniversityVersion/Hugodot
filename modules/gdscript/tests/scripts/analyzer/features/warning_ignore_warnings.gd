@@ -43,7 +43,7 @@ func test_warnings(unused_private_class_variable):
 	var unused_variable
 
 	@warning_ignore("unused_local_constant")
-	const unused_local_constant = 1
+	final unused_local_constant = 1
 
 	@warning_ignore("shadowed_variable")
 	var shadowed_variable = 1
