@@ -123,6 +123,7 @@ static const char *token_names[] = {
 	"var", // VAR,
 	"void", // TK_VOID,
 	"yield", // YIELD,
+	"HOLA_HUGO", // HOLA_HUGO,
 	// Punctuation
 	"[", // BRACKET_OPEN,
 	"]", // BRACKET_CLOSE,
@@ -536,6 +537,8 @@ GDScriptTokenizer::Token GDScriptTokenizerText::annotation() {
 	KEYWORD("when", Token::WHEN) \
 	KEYWORD_GROUP('y') \
 	KEYWORD("yield", Token::YIELD) \
+	KEYWORD_GROUP('H') \
+	KEYWORD("HOLA_HUGO", Token::HOLA_HUGO) \
 	KEYWORD_GROUP('I') \
 	KEYWORD("INF", Token::CONST_INF) \
 	KEYWORD_GROUP('N') \

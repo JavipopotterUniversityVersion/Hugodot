@@ -2102,6 +2102,24 @@ GDScriptParser::Node *GDScriptParser::parse_statement() {
 			advance();
 			result = parse_assert();
 			break;
+		case GDScriptTokenizer::Token::HOLA_HUGO: {
+			advance();
+			// Expand as: print("Hola Hugo")
+			CallNode *call = alloc_node<CallNode>();
+			call->function_name = SNAME("print");
+			IdentifierNode *print_id = alloc_node<IdentifierNode>();
+			print_id->name = SNAME("print");
+			complete_extents(print_id);
+			call->callee = print_id;
+			LiteralNode *arg = alloc_node<LiteralNode>();
+			arg->value = String("Hola Hugo");
+			complete_extents(arg);
+			call->arguments.push_back(arg);
+			complete_extents(call);
+			end_statement(R"("HOLA_HUGO")");
+			result = call;
+			break;
+		}
 		case GDScriptTokenizer::Token::ANNOTATION: {
 			advance();
 			AnnotationNode *annotation = parse_annotation(AnnotationInfo::STATEMENT | AnnotationInfo::STANDALONE);
@@ -4313,6 +4331,7 @@ GDScriptParser::ParseRule *GDScriptParser::get_rule(GDScriptTokenizer::Token::Ty
 		{ nullptr,                                          nullptr,                                        PREC_NONE }, // VAR,
 		{ nullptr,                                          nullptr,                                        PREC_NONE }, // TK_VOID,
 		{ &GDScriptParser::parse_yield,                     nullptr,                                        PREC_NONE }, // YIELD,
+		{ nullptr,                                          nullptr,                                        PREC_NONE }, // HOLA_HUGO,
 		// Punctuation
 		{ &GDScriptParser::parse_array,                  	&GDScriptParser::parse_subscript,            	PREC_SUBSCRIPT }, // BRACKET_OPEN,
 		{ nullptr,                                          nullptr,                                        PREC_NONE }, // BRACKET_CLOSE,
