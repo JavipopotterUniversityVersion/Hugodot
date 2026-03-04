@@ -2624,6 +2624,8 @@ Vector<String> GDScriptLanguage::get_reserved_words() const {
 		"self",
 		"super",
 		"yield", // Reserved for potential future use.
+		// Macros.
+		"HOLA_HUGO",
 		// Operators.
 		"and",
 		"as",

@@ -128,6 +128,7 @@ public:
 			VAR,
 			TK_VOID, // Conflict with WinAPI.
 			YIELD,
+			HOLA_HUGO,
 			// Punctuation
 			BRACKET_OPEN,
 			BRACKET_CLOSE,
