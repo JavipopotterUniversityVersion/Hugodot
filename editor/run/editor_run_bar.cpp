@@ -121,7 +121,6 @@ void EditorRunBar::_reset_play_buttons() {
 
 	play_button->set_pressed(false);
 	play_button->set_button_icon(get_editor_theme_icon(SNAME("MainPlay")));
-	play_button->set_tooltip_text(TTRC("Run the project's main scene."));
 
 	play_scene_button->set_pressed(false);
 	play_scene_button->set_button_icon(get_editor_theme_icon(SNAME("PlayScene")));
@@ -603,12 +602,6 @@ EditorRunBar::EditorRunBar() {
 	play_button->set_theme_type_variation("RunBarButton");
 	play_button->set_toggle_mode(true);
 	play_button->set_focus_mode(Control::FOCUS_ACCESSIBILITY);
-	ED_SHORTCUT_AND_COMMAND("editor/run_project", TTRC("Run Project"), Key::F5);
-	ED_SHORTCUT_OVERRIDE("editor/run_project", "macos", KeyModifierMask::META | Key::B);
-	play_button->set_shortcut(ED_GET_SHORTCUT("editor/run_project"));
-	play_button->set_tooltip_text(TTRC("Run the project's main scene."));
-	play_button->connect(SceneStringName(pressed), callable_mp(this, &EditorRunBar::play_main_scene).bind(false, Vector<String>()));
-
 	pause_button = memnew(Button);
 	main_hbox->add_child(pause_button);
 	pause_button->set_theme_type_variation("RunBarButton");
