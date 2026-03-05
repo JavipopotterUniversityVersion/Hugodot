@@ -35,11 +35,17 @@
 class Component : public Node {
 	GDCLASS(Component, Node);
 
+	Dictionary component_data;
+
 protected:
+
 	static void _bind_methods();
 
 	GDVIRTUAL0RC(Dictionary, get_component);
 
 public:
 	virtual Dictionary get_component() const;
+
+	void set_component_data(const Dictionary &p_data);
+	Dictionary get_component_data() const;
 };
