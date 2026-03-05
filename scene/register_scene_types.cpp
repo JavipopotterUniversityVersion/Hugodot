@@ -99,7 +99,9 @@
 #include "scene/main/canvas_item.h"
 #include "scene/main/canvas_layer.h"
 #include "scene/main/component.h"
+#include "scene/main/format_writer.h"
 #include "scene/main/http_request.h"
+#include "scene/main/scene_writer.h"
 #include "scene/main/instance_placeholder.h"
 #include "scene/main/missing_node.h"
 #include "scene/main/multiplayer_api.h"
@@ -241,6 +243,8 @@
 #include "scene/3d/gpu_particles_3d.h"
 #include "scene/3d/gpu_particles_collision_3d.h"
 #include "scene/3d/ik_modifier_3d.h"
+#include "scene/3d/entity.h"
+#include "scene/3d/entity_3d.h"
 #include "scene/3d/importer_mesh_instance_3d.h"
 #include "scene/3d/iterate_ik_3d.h"
 #include "scene/3d/jacobian_ik_3d.h"
@@ -251,6 +255,7 @@
 #include "scene/3d/limit_angular_velocity_modifier_3d.h"
 #include "scene/3d/look_at_modifier_3d.h"
 #include "scene/3d/marker_3d.h"
+#include "scene/3d/scene_tracker.h"
 #include "scene/3d/mesh_instance_3d.h"
 #include "scene/3d/modifier_bone_target_3d.h"
 #include "scene/3d/multimesh_instance_3d.h"
@@ -461,6 +466,8 @@ void register_scene_types() {
 	GDREGISTER_CLASS(HTTPRequest);
 	GDREGISTER_CLASS(Timer);
 	GDREGISTER_CLASS(Component);
+	GDREGISTER_CLASS(FormatWriter);
+	GDREGISTER_CLASS(SceneWriter);
 	GDREGISTER_CLASS(CanvasLayer);
 	GDREGISTER_CLASS(ResourcePreloader);
 	GDREGISTER_CLASS(Window);
@@ -625,6 +632,9 @@ void register_scene_types() {
 #ifndef _3D_DISABLED
 	GDREGISTER_CLASS(Node3D);
 	GDREGISTER_ABSTRACT_CLASS(Node3DGizmo);
+	GDREGISTER_CLASS(SceneTracker);
+	GDREGISTER_CLASS(Entity);
+	GDREGISTER_CLASS(Entity3D);
 	GDREGISTER_CLASS(Skin);
 	GDREGISTER_ABSTRACT_CLASS(SkinReference);
 	GDREGISTER_CLASS(Skeleton3D);
