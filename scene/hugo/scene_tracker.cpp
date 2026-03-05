@@ -33,10 +33,10 @@
 #include "core/object/callable_method_pointer.h"
 #include "core/object/class_db.h"
 #include "core/variant/variant.h"
-#include "scene/3d/entity.h"
-#include "scene/3d/entity_3d.h"
-#include "scene/main/component.h"
-#include "scene/main/scene_writer.h"
+#include "scene/hugo/entity.h"
+#include "scene/hugo/entity_3d.h"
+#include "scene/hugo/component.h"
+#include "scene/hugo/scene_writer.h"
 
 void SceneTracker::set_entities(const Dictionary &p_entities) {
 	entities = p_entities;

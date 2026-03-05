@@ -540,6 +540,7 @@ env["debug_symbols"] = methods.get_cmdline_bool("debug_symbols", env.dev_build)
 
 if env.editor_build:
     env.Append(CPPDEFINES=["TOOLS_ENABLED"])
+    env.Append(CPPDEFINES=["HUGODOT"])
 
 if env.debug_features:
     # DEBUG_ENABLED enables debugging *features* and debug-only code, which is intended

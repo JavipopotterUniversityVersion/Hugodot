@@ -31,7 +31,7 @@
 #include "entity_3d.h"
 
 #include "core/object/class_db.h"
-#include "scene/main/format_writer.h"
+#include "scene/hugo/format_writer.h"
 
 Dictionary Entity3D::get_component() const {
 	Dictionary component;

@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/scene_tracker.h"
+#include "scene/hugo/scene_tracker.h"
 
 class Entity : public SceneTracker {
 	GDCLASS(Entity, SceneTracker);

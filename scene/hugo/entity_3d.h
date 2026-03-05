@@ -30,7 +30,7 @@
 
 #pragma once
 
-#include "scene/3d/entity.h"
+#include "scene/hugo/entity.h"
 
 class Entity3D : public Entity {
 	GDCLASS(Entity3D, Entity);

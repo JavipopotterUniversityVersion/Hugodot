@@ -65,7 +65,11 @@ void ProjectSettingsEditor::popup_project_settings(bool p_clear_filter) {
 	localization_editor->update_translations();
 	autoload_settings->update_autoload();
 	group_settings->update_groups();
+
+	#ifndef HUGODOT
 	plugin_settings->update_plugins();
+	#endif
+
 	import_defaults_editor->clear();
 
 	if (p_clear_filter) {
@@ -102,7 +106,9 @@ void ProjectSettingsEditor::_save() {
 }
 
 void ProjectSettingsEditor::set_plugins_page() {
+	#ifndef HUGODOT
 	tab_container->set_current_tab(tab_container->get_tab_idx_from_control(plugin_settings));
+	#endif
 }
 
 void ProjectSettingsEditor::set_general_page(const String &p_category) {
@@ -111,7 +117,9 @@ void ProjectSettingsEditor::set_general_page(const String &p_category) {
 }
 
 void ProjectSettingsEditor::update_plugins() {
+	#ifndef HUGODOT
 	plugin_settings->update_plugins();
+	#endif
 }
 
 void ProjectSettingsEditor::init_autoloads() {
@@ -838,9 +846,11 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 	group_settings->connect("group_changed", callable_mp(this, &ProjectSettingsEditor::queue_save));
 	globals_container->add_child(group_settings);
 
+	#ifndef HUGODOT
 	plugin_settings = memnew(EditorPluginSettings);
 	plugin_settings->set_name(TTRC("Plugins"));
 	tab_container->add_child(plugin_settings);
+	#endif
 
 	timer = memnew(Timer);
 	timer->set_wait_time(1.5);

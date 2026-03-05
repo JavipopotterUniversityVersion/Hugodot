@@ -374,6 +374,8 @@ def generate_scu_files(max_includes_per_scu):
     process_folder(["scene/resources/2d/skeleton"])
     process_folder(["scene/resources/3d"])
 
+    process_folder(["scene/hugo"])
+
     process_folder(["servers"])
     process_folder(["servers/rendering"])
     process_folder(["servers/rendering/dummy/storage"])

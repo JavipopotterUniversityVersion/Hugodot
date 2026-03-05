@@ -35,8 +35,8 @@
 #include "core/io/file_access.h"
 #include "core/object/class_db.h"
 #include "core/object/callable_method_pointer.h"
-#include "scene/3d/entity.h"
-#include "scene/3d/scene_tracker.h"
+#include "scene/hugo/entity.h"
+#include "scene/hugo/scene_tracker.h"
 
 #ifdef TOOLS_ENABLED
 #include "editor/editor_interface.h"
@@ -52,7 +52,6 @@ static const char *SYSTEM_NAMES[] = {
 };
 
 void SceneWriter::write() {
-#ifdef TOOLS_ENABLED
 	EditorInterface *editor = EditorInterface::get_singleton();
 	ERR_FAIL_NULL_MSG(editor, "SceneWriter::write() must be called from the editor.");
 
@@ -66,7 +65,7 @@ void SceneWriter::write() {
 	Dictionary entity_map = root->get_entities_map();
 
 	String scene_name = root->get_name();
-	String chats_path = GLOBAL_GET("scene_writer/chats_path");
+	String chats_path = GLOBAL_GET("hugo/chats_path");
 	String file_path = chats_path.path_join(scene_name + ".chat");
 
 	// Ensure output directory exists before attempting to write.
@@ -122,7 +121,6 @@ void SceneWriter::write() {
 	}
 
 	print_line("Written to: " + file_path);
-#endif // TOOLS_ENABLED
 }
 
 void SceneWriter::_bind_methods() {
