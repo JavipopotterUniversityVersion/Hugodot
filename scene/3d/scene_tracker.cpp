@@ -62,6 +62,10 @@ Callable SceneTracker::get_save_scene_callable() const {
 	return save_scene_callable;
 }
 
+Dictionary SceneTracker::get_entities_map() const {
+	return entities_map;
+}
+
 void SceneTracker::create_entities() {
 	entities_map = Dictionary();
 	entities = Dictionary();
@@ -140,6 +144,8 @@ void SceneTracker::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_systems"), &SceneTracker::get_systems);
 	ClassDB::bind_method(D_METHOD("set_save_scene_callable", "callable"), &SceneTracker::set_save_scene_callable);
 	ClassDB::bind_method(D_METHOD("get_save_scene_callable"), &SceneTracker::get_save_scene_callable);
+
+	ClassDB::bind_method(D_METHOD("get_entities_map"), &SceneTracker::get_entities_map);
 
 	ClassDB::bind_method(D_METHOD("create_entities"), &SceneTracker::create_entities);
 	ClassDB::bind_method(D_METHOD("add_entity", "entity"), &SceneTracker::add_entity);

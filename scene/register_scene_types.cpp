@@ -1412,6 +1412,8 @@ void register_scene_types() {
 
 	OS::get_singleton()->yield(); // may take time to init
 
+	GLOBAL_DEF(PropertyInfo(Variant::STRING, "scene_writer/chats_path", PROPERTY_HINT_GLOBAL_DIR), "../../HUGO/chats/");
+
 	for (int i = 0; i < 20; i++) {
 		GLOBAL_DEF_BASIC(vformat("%s/layer_%d", PNAME("layer_names/2d_render"), i + 1), "");
 		GLOBAL_DEF_BASIC(vformat("%s/layer_%d", PNAME("layer_names/3d_render"), i + 1), "");

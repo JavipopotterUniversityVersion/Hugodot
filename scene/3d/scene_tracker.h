@@ -66,6 +66,8 @@ public:
 	void set_save_scene_callable(const Callable &p_callable);
 	Callable get_save_scene_callable() const;
 
+	Dictionary get_entities_map() const;
+
 	void create_entities();
 	void add_entity(Entity *p_entity);
 	Dictionary gather_entities(Node *p_parent);
