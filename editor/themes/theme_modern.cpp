@@ -1637,6 +1637,15 @@ void ThemeModern::populate_editor_styles(const Ref<EditorTheme> &p_theme, Editor
 		style_bg->set_corner_radius_all(0);
 		p_theme->set_stylebox("Background", EditorStringName(EditorStyles), style_bg);
 
+		// Title bar.
+		Ref<StyleBoxFlat> style_title_bar = p_config.base_style->duplicate();
+		style_title_bar->set_bg_color(p_config.surface_lower_color);
+		style_title_bar->set_content_margin_all(0);
+		style_title_bar->set_corner_radius_all(0);
+		style_title_bar->set_border_width(SIDE_BOTTOM, Math::round(EDSCALE));
+		style_title_bar->set_border_color(p_config.separator_color);
+		p_theme->set_stylebox("TitleBar", EditorStringName(EditorStyles), style_title_bar);
+
 		Ref<StyleBoxFlat> editor_panel_foreground = p_config.base_style->duplicate();
 		editor_panel_foreground->set_corner_radius_all(0);
 		p_theme->set_stylebox("PanelForeground", EditorStringName(EditorStyles), editor_panel_foreground);

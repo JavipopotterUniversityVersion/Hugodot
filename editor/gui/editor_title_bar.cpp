@@ -31,6 +31,8 @@
 #include "editor_title_bar.h"
 
 #include "core/object/callable_method_pointer.h"
+#include "editor/editor_string_names.h"
+#include "scene/resources/style_box.h"
 #include "servers/display/display_server.h"
 
 void EditorTitleBar::gui_input(const Ref<InputEvent> &p_event) {
@@ -93,6 +95,17 @@ Control *EditorTitleBar::get_center_control() const {
 
 void EditorTitleBar::_notification(int p_what) {
 	switch (p_what) {
+		case NOTIFICATION_DRAW: {
+			Ref<StyleBox> style = get_theme_stylebox(SNAME("TitleBar"), EditorStringName(EditorStyles));
+			if (style.is_valid()) {
+				style->draw(get_canvas_item(), Rect2(Point2(), get_size()));
+			}
+		} break;
+
+		case NOTIFICATION_THEME_CHANGED: {
+			queue_redraw();
+		} break;
+
 		case NOTIFICATION_EXIT_TREE: {
 			SceneTree::get_singleton()->get_root()->disconnect(SceneStringName(nonclient_window_input), callable_mp(this, &EditorTitleBar::gui_input));
 			get_window()->set_nonclient_area(Rect2i());

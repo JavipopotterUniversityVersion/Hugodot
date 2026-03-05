@@ -1593,6 +1593,15 @@ void ThemeClassic::populate_editor_styles(const Ref<EditorTheme> &p_theme, Edito
 		p_theme->set_color("background", EditorStringName(Editor), background_color_opaque);
 		p_theme->set_stylebox("Background", EditorStringName(EditorStyles), EditorThemeManager::make_flat_stylebox(background_color_opaque, p_config.base_margin, p_config.base_margin, p_config.base_margin, p_config.base_margin));
 
+		// Title bar.
+		Ref<StyleBoxFlat> style_title_bar = p_config.base_style->duplicate();
+		style_title_bar->set_bg_color(p_config.dark_color_3);
+		style_title_bar->set_content_margin_all(0);
+		style_title_bar->set_corner_radius_all(0);
+		style_title_bar->set_border_width(SIDE_BOTTOM, Math::round(EDSCALE));
+		style_title_bar->set_border_color(p_config.dark_color_1);
+		p_theme->set_stylebox("TitleBar", EditorStringName(EditorStyles), style_title_bar);
+
 		Ref<StyleBoxFlat> editor_panel_foreground = p_config.base_style->duplicate();
 		editor_panel_foreground->set_corner_radius_all(0);
 		p_theme->set_stylebox("PanelForeground", EditorStringName(EditorStyles), editor_panel_foreground);
