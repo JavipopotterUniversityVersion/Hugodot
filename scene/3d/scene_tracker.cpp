@@ -80,12 +80,8 @@ void SceneTracker::add_entity(Entity *p_entity) {
 		entity_name = entity_name + "_O";
 	}
 	p_entity->set_name(StringName(entity_name));
-	if (!entities.has(entity_name)) {
-		entities[entity_name] = Dictionary();
-	}
-	if (!entities_map.has(entity_name)) {
-		entities_map[entity_name] = current_entity_index;
-	}
+	entities[entity_name] = Dictionary();
+	entities_map[entity_name] = current_entity_index;
 	current_entity_index++;
 }
 
