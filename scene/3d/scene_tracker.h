@@ -48,7 +48,7 @@ public:
 
 private:
 	Dictionary entities;
-	Array systems;
+	Array<SceneTracker::System> systems;
 	int current_entity_index = 0;
 	Dictionary entities_map;
 	Callable save_scene_callable;
