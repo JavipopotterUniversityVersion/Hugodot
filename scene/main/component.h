@@ -35,6 +35,8 @@
 class Component : public Node {
 	GDCLASS(Component, Node);
 
+	Dictionary component_data;
+
 protected:
 	static void _bind_methods();
 
@@ -42,4 +44,5 @@ protected:
 
 public:
 	virtual Dictionary get_component() const;
+	void set_component(const Dictionary &p_component);
 };

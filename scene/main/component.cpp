@@ -34,12 +34,21 @@
 
 Dictionary Component::get_component() const {
 	Dictionary d;
-	GDVIRTUAL_CALL(get_component, d);
-	return d;
+	if (GDVIRTUAL_CALL(get_component, d)) {
+		return d;
+	}
+	return component_data;
+}
+
+void Component::set_component(const Dictionary &p_component) {
+	component_data = p_component;
 }
 
 void Component::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_component"), &Component::get_component);
+	ClassDB::bind_method(D_METHOD("set_component", "component"), &Component::set_component);
+
+	ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "component"), "set_component", "get_component");
 
 	GDVIRTUAL_BIND(get_component);
 }
