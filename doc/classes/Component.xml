@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Component" inherits="Node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../class.xsd">
+	<brief_description>
+		Base class for components that can be attached to nodes.
+	</brief_description>
+	<description>
+		[Component] is a base class for implementing the component pattern in Godot. It can be used to encapsulate data and behavior that is attached to a parent node. Subclasses should override the [method get_component] virtual method to return a [Dictionary] describing the component's data.
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="get_component" qualifiers="virtual const">
+			<return type="Dictionary" />
+			<description>
+				Override this method to return a [Dictionary] containing the component's data. The returned dictionary can be used by other systems to query the component's state.
+			</description>
+		</method>
+	</methods>
+</class>
