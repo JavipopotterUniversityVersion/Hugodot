@@ -98,10 +98,7 @@
 #include "scene/gui/virtual_joystick.h"
 #include "scene/main/canvas_item.h"
 #include "scene/main/canvas_layer.h"
-#include "scene/hugo/component.h"
-#include "scene/hugo/format_writer.h"
 #include "scene/main/http_request.h"
-#include "scene/hugo/scene_writer.h"
 #include "scene/main/instance_placeholder.h"
 #include "scene/main/missing_node.h"
 #include "scene/main/multiplayer_api.h"
@@ -243,8 +240,6 @@
 #include "scene/3d/gpu_particles_3d.h"
 #include "scene/3d/gpu_particles_collision_3d.h"
 #include "scene/3d/ik_modifier_3d.h"
-#include "scene/hugo/entity.h"
-#include "scene/hugo/entity_3d.h"
 #include "scene/3d/importer_mesh_instance_3d.h"
 #include "scene/3d/iterate_ik_3d.h"
 #include "scene/3d/jacobian_ik_3d.h"
@@ -255,7 +250,6 @@
 #include "scene/3d/limit_angular_velocity_modifier_3d.h"
 #include "scene/3d/look_at_modifier_3d.h"
 #include "scene/3d/marker_3d.h"
-#include "scene/hugo/scene_tracker.h"
 #include "scene/3d/mesh_instance_3d.h"
 #include "scene/3d/modifier_bone_target_3d.h"
 #include "scene/3d/multimesh_instance_3d.h"
@@ -379,6 +373,16 @@
 #include "scene/resources/3d/world_boundary_shape_3d.h"
 #endif // PHYSICS_3D_DISABLED
 
+#ifdef HUGODOT
+#include "scene/hugo/component.h"
+#include "scene/hugo/entity_3d.h"
+#include "scene/hugo/entity.h"
+#include "scene/hugo/format_writer.h"
+#include "scene/hugo/render_component.h"
+#include "scene/hugo/scene_tracker.h"
+#include "scene/hugo/scene_writer.h"
+#endif
+
 static Ref<ResourceFormatSaverText> resource_saver_text;
 static Ref<ResourceFormatLoaderText> resource_loader_text;
 
@@ -473,6 +477,7 @@ void register_scene_types() {
 	GDREGISTER_CLASS(SceneTracker);
 	GDREGISTER_CLASS(Entity);
 	GDREGISTER_CLASS(Entity3D);
+	GDREGISTER_CLASS(RenderComponent);
 	#endif
 
 	GDREGISTER_CLASS(CanvasLayer);
@@ -1425,6 +1430,8 @@ void register_scene_types() {
 		GLOBAL_DEF_BASIC(vformat("%s/layer_%d", PNAME("layer_names/3d_render"), i + 1), "");
 	}
 
+	#ifndef HUGODOT
+
 	for (int i = 0; i < 32; i++) {
 		GLOBAL_DEF_BASIC(vformat("%s/layer_%d", PNAME("layer_names/2d_physics"), i + 1), "");
 #ifndef NAVIGATION_2D_DISABLED
@@ -1439,6 +1446,8 @@ void register_scene_types() {
 	for (int i = 0; i < 32; i++) {
 		GLOBAL_DEF_BASIC(vformat("%s/layer_%d", PNAME("layer_names/avoidance"), i + 1), "");
 	}
+
+	#endif // HUGODOT
 
 	if (RenderingServer::get_singleton()) {
 		// RenderingServer needs to exist for this to succeed.

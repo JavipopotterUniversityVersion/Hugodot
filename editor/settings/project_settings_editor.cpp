@@ -66,9 +66,7 @@ void ProjectSettingsEditor::popup_project_settings(bool p_clear_filter) {
 	autoload_settings->update_autoload();
 	group_settings->update_groups();
 
-	#ifndef HUGODOT
 	plugin_settings->update_plugins();
-	#endif
 
 	import_defaults_editor->clear();
 
@@ -106,9 +104,7 @@ void ProjectSettingsEditor::_save() {
 }
 
 void ProjectSettingsEditor::set_plugins_page() {
-	#ifndef HUGODOT
 	tab_container->set_current_tab(tab_container->get_tab_idx_from_control(plugin_settings));
-	#endif
 }
 
 void ProjectSettingsEditor::set_general_page(const String &p_category) {
@@ -117,9 +113,7 @@ void ProjectSettingsEditor::set_general_page(const String &p_category) {
 }
 
 void ProjectSettingsEditor::update_plugins() {
-	#ifndef HUGODOT
 	plugin_settings->update_plugins();
-	#endif
 }
 
 void ProjectSettingsEditor::init_autoloads() {
@@ -846,11 +840,9 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 	group_settings->connect("group_changed", callable_mp(this, &ProjectSettingsEditor::queue_save));
 	globals_container->add_child(group_settings);
 
-	#ifndef HUGODOT
 	plugin_settings = memnew(EditorPluginSettings);
 	plugin_settings->set_name(TTRC("Plugins"));
 	tab_container->add_child(plugin_settings);
-	#endif
 
 	timer = memnew(Timer);
 	timer->set_wait_time(1.5);
@@ -874,4 +866,8 @@ ProjectSettingsEditor::ProjectSettingsEditor(EditorData *p_data) {
 	tab_container->add_child(import_defaults_editor);
 
 	MovieWriter::set_extensions_hint(); // ensure extensions are properly displayed.
+
+	#ifdef HUGODOT
+	tab_container->set_tab_hidden(tab_container->get_tab_idx_from_control(plugin_settings), true);
+	#endif
 }

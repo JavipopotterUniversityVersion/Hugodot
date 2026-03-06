@@ -398,6 +398,7 @@ void EditorRunBar::recovery_mode_reload_project() {
 }
 
 void EditorRunBar::play_main_scene(bool p_from_native, const Vector<String> &p_play_args) {
+	#ifndef HUGODOT
 	if (Engine::get_singleton()->is_recovery_mode_hint()) {
 		EditorToaster::get_singleton()->popup_str(TTR("Recovery Mode is enabled. Disable it to run the project."), EditorToaster::SEVERITY_WARNING);
 		return;
@@ -411,6 +412,7 @@ void EditorRunBar::play_main_scene(bool p_from_native, const Vector<String> &p_p
 		current_mode = RunMode::RUN_MAIN;
 		_run_scene("", p_play_args);
 	}
+	#endif
 }
 
 void EditorRunBar::play_current_scene(bool p_reload, const Vector<String> &p_play_args) {
@@ -709,4 +711,8 @@ EditorRunBar::EditorRunBar() {
 	write_movie_button->set_tooltip_text(TTRC("Enable Movie Maker mode.\nThe project will run at stable FPS and the visual and audio output will be recorded to a video file."));
 	write_movie_button->set_accessibility_name(TTRC("Enable Movie Maker Mode"));
 	write_movie_button->set_flat(false);
+
+	#ifdef HUGODOT
+	main_panel->hide();
+	#endif
 }

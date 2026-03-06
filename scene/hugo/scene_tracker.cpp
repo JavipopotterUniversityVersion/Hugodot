@@ -121,15 +121,14 @@ Dictionary SceneTracker::gather_entities(Node *p_parent) {
 			}
 		}
 
-		Component *child_component = Object::cast_to<Component>(child);
-		if (child_component) {
+		if (child->has_method("get_component")) {
 			Entity *parent_entity = Object::cast_to<Entity>(p_parent);
 			if (parent_entity) {
 				String child_class_name = child->get_class();
 				String parent_name = parent_entity->get_name();
 				Dictionary parent_dict = entities[parent_name];
 				if (!parent_dict.has(child_class_name)) {
-					parent_dict[child_class_name] = child_component->get_component();
+					parent_dict[child_class_name] = child->call("get_component");
 				}
 			}
 		}
@@ -151,7 +150,6 @@ void SceneTracker::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("add_entity", "entity"), &SceneTracker::add_entity);
 	ClassDB::bind_method(D_METHOD("gather_entities", "parent"), &SceneTracker::gather_entities);
 
-	ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "entities"), "set_entities", "get_entities");
 	ADD_PROPERTY(PropertyInfo(Variant::ARRAY, "systems"), "set_systems", "get_systems");
 	ADD_PROPERTY(PropertyInfo(Variant::CALLABLE, "save_scene", PROPERTY_HINT_TOOL_BUTTON, "Save Scene"), "set_save_scene_callable", "get_save_scene_callable");
 
